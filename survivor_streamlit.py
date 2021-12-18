@@ -4,7 +4,13 @@ import streamlit as st
 import pandas as pd 
 import joblib
 import os 
-import sklearn
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegressionCV
+from sklearn.metrics import accuracy_score,f1_score,confusion_matrix
 
 # Create the Title
 st.title("Survivor Prediction App")
