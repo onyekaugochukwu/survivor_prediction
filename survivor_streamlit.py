@@ -2,7 +2,8 @@
 from pandas.core.reshape.reshape import get_dummies
 import streamlit as st  
 import pandas as pd 
-import joblib 
+import joblib
+import os 
 
 # Create the Title
 st.title("Survivor Prediction App")
@@ -16,7 +17,8 @@ age = st.number_input("Enter the passenger's age")
 # else we will have a mismatch in the number of items input into the model at fit versus the original 
 # dimension of the dataset
 
-dataset = pd.read_csv(r"C:\Users\ugo\Desktop\survivor_prediction.csv")
+path = "C:\Users\ugo\Documents\GitHub\survivor_prediction\survivor_prediction.csv"
+dataset = pd.read_csv(path)
 dataset_categorical = dataset.drop(['age','survived'],axis=1)
 dataset_numerical = dataset.drop(['pclass','sex','survived'],axis=1)
 
